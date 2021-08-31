@@ -1,11 +1,10 @@
 
 ## About me
-
 ______
 
 1. My name is Vasiliy
 2. I from Rostov-on-Don
-3. I work as a programmer and system. administrator
+3. I work as a programmer and system administrator.
 
 ## I'm interested in the course because 
 
