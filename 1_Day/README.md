@@ -16,7 +16,8 @@
 
 1. python + flask
 2. ansible
+3. yaml format
 
 ## 03-09-2021 I learned
 
-1. ansible palybook
+1. ansible palybook, vars, debug, set_fact, register
