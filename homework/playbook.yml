@@ -1,0 +1,57 @@
+---
+- name: Run simple Flask server for andersen course
+  hosts: debian
+  become: yes
+
+  vars:
+    work_folder: /Flask
+
+  tasks:
+    - name: install packages
+      apt: name={{item}} state=latest
+      with_items:
+        - python3-pip
+        - python3-venv
+        - python-virtualenv
+        - git
+
+    # - name: Install git
+    #   apt:
+    #     name: git
+    #     state: present
+    #     update_cache: yes
+
+    - name: Delete content & directory
+      file:
+        state: absent
+        path: "{{work_folder}}"
+
+    - name: Creates directory
+      file:
+        path: "{{work_folder}}"
+        state: directory
+
+    - name: clone repo
+      git:
+        repo: "https://github.com/vacilyok/Simple-Flask.git"
+        dest: "{{work_folder}}"
+        update: yes
+
+    - name: set env
+      command: python3 -m venv venv
+
+    - name: Manually create the initial virtualenv
+      command:
+        cmd: virtualenv /Flask/myenv -p python3.7
+        creates: "/Flask/myenv"
+
+    - name: install Flask
+      shell: /Flask/myenv/bin/pip install Flask
+
+    - name: install waitress
+      shell: /Flask/myenv/bin/pip install waitress
+
+    - name: Run server
+      shell: /Flask/myenv/bin/python3.7 /Flask/app.py
+      async: 1000
+      poll: 0
