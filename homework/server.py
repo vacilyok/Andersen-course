@@ -8,17 +8,14 @@ def animal_say(animal, sound, count, method):
     say_phrase = ""
     for i in range(int(count)):
         if method == 'POST':
-            say_phrase = say_phrase + \
-                str("{} says {} \n".format(animal, sound))
+            say_phrase = say_phrase + str("{} says {} \n".format(animal, sound))
         else:
-            say_phrase = say_phrase + \
-                str("<p style='font-size:12pt'><b>{}</b> says {} </p>".format(animal, sound))
+            say_phrase = say_phrase + str("<p style='font-size:12pt'><b>{}</b> says {} </p>".format(animal, sound))
 
     if method == 'POST':
         say_phrase = say_phrase + "Made with by vacilyok \n"
     else:
-        say_phrase = say_phrase + \
-            "<p style='font-size:12pt'>Made with by <a href='https://github.com/vacilyok'>vacilyok</a></p>"
+        say_phrase = say_phrase + "<p style='font-size:12pt'>Made with by <a href='https://github.com/vacilyok'>vacilyok</a></p>"
 
     return say_phrase
 

@@ -7,3 +7,16 @@
 
 1. Install jenkins
 2. Run simple pipeline
+
+## 01-09-2021 I learned
+
+1. Install kubernetes cluster (master + 2 node)
+
+## 02-09-2021 I learned
+
+1. python + flask
+2. ansible
+
+## 03-09-2021 I learned
+
+1. ansible palybook
