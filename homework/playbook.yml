@@ -50,7 +50,7 @@
     # Configure app systemd service 
     - name: template systemd service config
       copy:
-        src: .service
+        src: service
         dest: /etc/systemd/system/flask.service
     - name: start systemd app service
       systemd: name=flask.service state=restarted enabled=yes
