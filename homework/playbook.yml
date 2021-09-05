@@ -14,6 +14,7 @@
         - python3-venv
         - python-virtualenv
         - git
+        - nginx
 
     - name: Delete content & directory
       file:
@@ -25,11 +26,31 @@
         path: "{{work_folder}}"
         state: directory
 
-    - name: clone repo
-      git:
-        repo: "https://github.com/vacilyok/Simple-Flask.git"
-        dest: "{{work_folder}}"
-        update: yes
+    # - name: clone repo
+    #   git:
+    #     repo: "https://github.com/vacilyok/Simple-Flask.git"
+    #     dest: "{{work_folder}}"
+    #     update: yes
+
+    - name: Copy wsgi.py file 
+      copy:
+        src: wsgi.py
+        dest: "{{work_folder}}/wsgi.py"
+        mode: '0644'
+
+    - name: Copy server.py file 
+      copy:
+        src: server.py
+        dest: "{{work_folder}}/app.py"
+        mode: '0644'
+
+
+    - name: config.ini file 
+      copy:
+        src: config.ini
+        dest: "{{work_folder}}/config.ini"
+        mode: '0644'
+
 
     - name: Manually create the initial virtualenv
       command:
@@ -42,10 +63,14 @@
     - name: install waitress
       shell: /Flask/myenv/bin/pip install waitress
 
-    - name: Run server
-      shell: /Flask/myenv/bin/python3.7 /Flask/app.py
-      async: 1000
-      poll: 0
+    - name: install uwsgi 
+      shell: /Flask/myenv/bin/pip install uwsgi 
+
+
+    # - name: Run server
+    #   shell: /Flask/myenv/bin/python3.7 /Flask/app.py
+    #   async: 1000
+    #   poll: 0
 
     # Configure app systemd service 
     - name: template systemd service config
@@ -53,5 +78,31 @@
         src: service
         dest: /etc/systemd/system/flask.service
 
-    # - name: start systemd app service
-    #   systemd: name=flask.service state=restarted enabled=yes
+    - name: template systemd service config
+      template:
+        src: service.j2
+        dest: /etc/systemd/system/flask.service
+        mode: '0644'
+
+    - name: start systemd app service
+      systemd: name=flask.service daemon_reload=yes state=started enabled=yes
+
+
+    - name: template nginx site config
+      template:
+        src: nginx
+        dest: /etc/nginx/sites-available/flask
+
+    - name: remove default nginx site config
+      file: path=/etc/nginx/sites-enabled/default state=absent
+
+
+    - name: enable nginx site
+      file:
+        src: /etc/nginx/sites-available/flask
+        dest: /etc/nginx/sites-enabled/default
+        state: link
+        force: yes
+
+    - name: restart nginx
+      systemd: name=nginx state=restarted enabled=yes      
