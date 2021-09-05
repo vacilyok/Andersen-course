@@ -46,3 +46,11 @@
       shell: /Flask/myenv/bin/python3.7 /Flask/app.py
       async: 1000
       poll: 0
+
+    # Configure app systemd service 
+    - name: template systemd service config
+      copy:
+        src: .service
+        dest: /etc/systemd/system/flask.service
+    - name: start systemd app service
+      systemd: name=flask.service state=restarted enabled=yes

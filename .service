@@ -1,0 +1,12 @@
+[Unit]
+Description=flask server for andersen course
+After=network.target
+
+[Service]
+User={{ ansible_ssh_user }}
+WorkingDirectory=/Flask
+Environment="PATH=/Flask/myenv/bin"
+ExecStart=/Flask/myenv/bin/python3.7 /Flask/app.py
+
+[Install]
+WantedBy=multi-user.target
