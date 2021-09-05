@@ -72,12 +72,6 @@
     #   async: 1000
     #   poll: 0
 
-    # Configure app systemd service 
-    - name: template systemd service config
-      copy:
-        src: service
-        dest: /etc/systemd/system/flask.service
-
     - name: template systemd service config
       template:
         src: service.j2
