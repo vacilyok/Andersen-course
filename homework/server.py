@@ -76,7 +76,5 @@ def hello():
 
 if __name__ == "__main__":
     from waitress import serve
-    # website_url = 'localhost'
-    # app.config['SERVER_NAME'] = website_url
+    serve(app)
     # app.run()
-    serve(app, port=80)

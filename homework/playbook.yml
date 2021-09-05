@@ -52,5 +52,6 @@
       copy:
         src: service
         dest: /etc/systemd/system/flask.service
-    - name: start systemd app service
-      systemd: name=flask.service state=restarted enabled=yes
+
+    # - name: start systemd app service
+    #   systemd: name=flask.service state=restarted enabled=yes
