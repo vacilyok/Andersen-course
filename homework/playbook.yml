@@ -15,12 +15,6 @@
         - python-virtualenv
         - git
 
-    # - name: Install git
-    #   apt:
-    #     name: git
-    #     state: present
-    #     update_cache: yes
-
     - name: Delete content & directory
       file:
         state: absent
@@ -36,9 +30,6 @@
         repo: "https://github.com/vacilyok/Simple-Flask.git"
         dest: "{{work_folder}}"
         update: yes
-
-    - name: set env
-      command: python3 -m venv venv
 
     - name: Manually create the initial virtualenv
       command:
