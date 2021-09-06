@@ -3,8 +3,6 @@
 
 [debian:vars]
 ansible_ssh_user=vacilio
-ansible_ssh_pass=rndvacilio
-ansible_sudo_pass=rndvacilio
 github_user=vacilyok
 ansible_ssh_port=22
 ansible_ssh_common_args="-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
