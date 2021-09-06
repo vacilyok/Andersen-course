@@ -13,6 +13,7 @@
         - python3-pip
         - python3-venv
         - python-virtualenv
+        - ufw
 
     - name: Delete content & directory
       file:
@@ -60,3 +61,12 @@
 
     - name: start systemd app service
       systemd: name=flask.service daemon_reload=yes state=started enabled=yes
+
+    - name: Allow SSH in UFW
+      ufw: rule=allow port=22 proto=tcp
+
+    - name: Allow http in UFW
+      ufw: rule=allow port=80 proto=tcp
+
+    - name: Set firewall default policy
+      ufw: state=enabled policy=reject
