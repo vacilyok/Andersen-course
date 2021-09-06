@@ -13,7 +13,6 @@
         - python3-pip
         - python3-venv
         - python-virtualenv
-        - git
 
     - name: Delete content & directory
       file:
