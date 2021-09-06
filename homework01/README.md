@@ -17,8 +17,8 @@ Run command:
 1. git clone https://github.com/vacilyok/Andersen-course.git
 2. cd Andersen-course/homework/
 3. vi  hosts.txt  then change ip address
-4. vi playbook.yml and insert ansible-vault encript string in vars ansible_ssh_pass and ansible_sudo_pass.
-5. run ansible-playbook playbook.yml --ask-vault-pass
+4. vi group_vars/debian.yaml and change value ansible_ssh_pass and ansible_sudo_pass.
+5. run ansible-playbook playbook.yml
 ```
 
 Wait a while! In your browser, go to http://remote_host_ip
