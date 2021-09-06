@@ -15,7 +15,7 @@ Git client must be installed on your pc
 ```
 Run command:
 1. git clone https://github.com/vacilyok/Andersen-course.git
-2. cd Andersen-course/homework/
+2. cd Andersen-course/homework01/
 3. vi  hosts.txt  then change ip address
 4. vi group_vars/debian.yaml and change value ansible_ssh_pass and ansible_sudo_pass.
 5. run ansible-playbook playbook.yml
