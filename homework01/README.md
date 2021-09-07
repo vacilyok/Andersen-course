@@ -7,7 +7,9 @@ Simple falsk server for homework for the Andersen course. The flask server is in
 ## Requirements
 
 ```
-Git client must be installed on your pc
+1. Git client must be installed on your public
+2. Public key should be generated on your pc
+
 ```
 
 ## Install
