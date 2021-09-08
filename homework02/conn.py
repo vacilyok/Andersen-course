@@ -64,7 +64,7 @@ def display_info(ips, whois_key):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--p", help="pid number")
+    parser.add_argument("--p", help="process id number")
     parser.add_argument("--n", help="programm name")
     parser.add_argument("--cnt", help="number of records")
     parser.add_argument(
