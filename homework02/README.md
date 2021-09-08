@@ -24,5 +24,5 @@ python 3
 ```
 python3 conn.py --p=904 --whois=org --cnt=3
 or
-python3 conn.py --n=firefox --whois=org --cnt=3
+python3 conn.py --n=firefox --whois=country --cnt=6
 ```
