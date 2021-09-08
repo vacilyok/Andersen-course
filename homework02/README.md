@@ -2,7 +2,7 @@
 
 ---
 
-The script displays a list of established connections. To get a list of established connections in the script, you must pass the pid key or the name of the program.
+The script displays a list of established connections. To get a list of established connections in the script, you must pass the pid key or name program.
 
 ## Requirements
 
@@ -26,5 +26,3 @@ python3 conn.py --p=904 --whois=org --cnt=3
 or
 python3 conn.py --n=firefox --whois=org --cnt=3
 ```
-
-## Results
