@@ -2,11 +2,9 @@
 
 ---
 
-Description
+## Description
 
-```
 The bot displays a list of completed homework
-```
 
 ## List command
 
