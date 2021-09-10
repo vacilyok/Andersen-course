@@ -22,7 +22,6 @@
 
 1. ansible palybook, vars, debug, set_fact, register
 
-
 ## 04-09-2021 I learned
 
 1. ansible Loop, With_Items, Until, With_fileglob
@@ -38,3 +37,12 @@
 
 1. ansible import, include, extra-vars
 2. parse web site by python
+
+## 07-09-2021 I learned
+
+1. basic docker, docker-compose, dasic command
+2. Dockerfile, build images
+
+## 08-09-2021 I learned
+
+1. Basic golang, create telegramm bot on golang
