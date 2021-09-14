@@ -1,7 +1,5 @@
 import requests
-
-# r = requests.get('https://api.github.com/repos/torvalds/linux/pulls?state=all')
-# r = requests.get('https://api.github.com/repos/t1m0n/air-datepicker/pulls)
+import sys
 
 
 def display_active_user(sorted_user):
@@ -17,9 +15,12 @@ def display_active_user(sorted_user):
 
 
 if __name__ == '__main__':
-    url = 'https://github.com/t1m0n/air-datepicker'
-    # url = 'https://github.com/PyGithub/PyGithub'
-    # url = 'https://github.com/vacilyok/Andersen-course'
+    # url = 'https://github.com/t1m0n/air-datepicker'
+    if len(sys.argv) > 1:
+        url = sys.argv[1]
+    else:
+        url = 'https://github.com/vacilyok/Andersen-course'
+        print(f"\n\nLink to repository: {url}")
     gitHubdata = url.split('/')
     git_repo = gitHubdata[-1]
     git_user = gitHubdata[-2]
@@ -30,7 +31,6 @@ if __name__ == '__main__':
         r = requests.get(
             f'https://api.github.com/repos/{git_user}/{git_repo}/pulls?per_page=100&page={page}&state=open')
         result = r.json()
-        print(result)
         count_request = len(result)
         open_request = open_request + count_request
         if count_request == 0:
