@@ -40,9 +40,26 @@
 
 ## 07-09-2021 I learned
 
-1. basic docker, docker-compose, dasic command
+1. basic docker, docker-compose, basic command
 2. Dockerfile, build images
 
 ## 08-09-2021 I learned
 
 1. Basic golang, create telegramm bot on golang
+
+## 09-09-2021 I learned
+
+1. Git basic command
+2. git pull requests
+
+
+## 14-09-2021 I learned
+
+1. Install grafana
+2. Install prometheus
+
+## 15-09-2021 I learned
+
+1.  Create exporter by python for read metrics from remote server
+
+
