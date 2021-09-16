@@ -1,5 +1,5 @@
 ## Description
-Build docker container with flask servers from homework01
+Build docker container with flask servers from homework01 with minimal footprint.
 
 ## Run command
 
