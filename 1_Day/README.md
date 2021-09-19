@@ -60,6 +60,18 @@
 
 ## 15-09-2021 I learned
 
-1.  Create exporter by python for read metrics from remote server
+1.  Create prometheus exporter by python for read metrics from remote server
+
+## 16-09-2021 I learned
+
+1.  Install zabbix
+2.  Install zabbix-agent on linux server and add for monitoring
+3.  Add SNMP device in zabbix server
+
+## 17-09-2021 I learned
+
+1.  Build docker images for dockerhub repository
+2.  pull docker images from dockerhub repository
+3.  docker tag
 
 
