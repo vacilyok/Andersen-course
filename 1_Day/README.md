@@ -79,3 +79,6 @@
 1.  create docker swarm cluster
 2.  docker swarm stack
 
+## 21-09-2021 I learned
+
+1.  SR-IOV technology
