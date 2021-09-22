@@ -74,4 +74,8 @@
 2.  pull docker images from dockerhub repository
 3.  docker tag
 
+## 20-09-2021 I learned
+
+1.  create docker swarm cluster
+2.  docker swarm stack
 
